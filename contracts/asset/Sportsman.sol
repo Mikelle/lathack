@@ -1,7 +1,7 @@
 pragma solidity ^0.4.15;
 
-import "./asset/IIdentity.sol";
-import "./asset/IInformation.sol";
+import "./IIdentity.sol";
+import "./IInformation.sol";
 
 contract Sportsman is IIdentity, IInformation {
     uint salary;

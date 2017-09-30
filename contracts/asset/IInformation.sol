@@ -1,6 +1,6 @@
 pragma solidity ^0.4.15;
 
-import "./asset/Source.sol";
+import "./Source.sol";
 
 contract IInformation is Source {
     
