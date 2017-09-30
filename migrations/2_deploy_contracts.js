@@ -1,4 +1,4 @@
-const Sportsman = artifacts.require('./Sportsman.sol');
+const Sportsman = artifacts.require('./asset/Sportsman.sol');
 const Proposal = artifacts.require("./Proposal.sol");
 const PayableProposal = artifacts.require("./PayableProposal.sol");
 const FinalizableProposal = artifacts.require("./FinalizableProposal.sol");
