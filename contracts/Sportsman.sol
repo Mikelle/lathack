@@ -1,59 +1,27 @@
-pragma solidity ^0.4.9;
+pragma solidity ^0.4.10;
 
-contract IIdentity {
-    bytes name;
-}
-
-contract Source {
-    address sourceAddress;
-    
-    function Source() {
-        sourceAddress = msg.sender;
-    }
-    
-    modifier onlySource() {
-        require(msg.sender == sourceAddress);
-        _;
-    }
-    
-    function transferSource(address newSourceAddress) onlySource {
-        sourceAddress = newSourceAddress;
-    }
-}
-contract IInformation is Source {
-    
-    event FieldChanged(int field, bytes newValue, address sourceAddress, 
-    uint requestId);
-    
-	function setField(int field, bytes value, uint requestId) onlySource returns (bool ok);
-}
+import "./IIdentity.sol";
+import "./IInformation.sol";
 
 contract Sportsman is IIdentity, IInformation {
-    bytes salary;
+    uint salary;
     
-    function setField(int field, bytes value, uint requestId) onlySource returns (bool ok) {
-        if (field == 0) {
-            setName(value);
-            FieldChanged(field, value, sourceAddress, requestId);
-        } else if (field == 1) {
-            setSalary(salary);
-            FieldChanged(field, value, sourceAddress, requestId);
-        }
-    }
-    
-    function setName(bytes _name) {
+    function setName(string _name) onlySource {
         name = _name;
+        FieldStringChanged("Setted name", _name, sourceAddress);
     }
     
-    function getName() constant returns(bytes) {
+    function getName() constant returns(string) {
         return name;
     }
     
-    function setSalary(bytes _salary) {
+    function setSalary(uint _salary) onlySource {
         salary = _salary;
+        FieldUintChanged("Setted salary", _salary, sourceAddress);
     }
     
-    function getSalary() constant returns(bytes) {
+    function getSalary() constant returns(uint) {
         return salary;
     }
 }
+

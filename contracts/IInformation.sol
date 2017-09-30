@@ -1,13 +1,10 @@
-contract IInformation {
+pragma solidity ^0.4.15;
 
-	address sourceAddress;
-	
-	event FieldChanged(int field, bytes newValue, address sourceAddress, uint requestId);
+import "./Source.sol";
 
-	function setField(int field, bytes value, uint requestId) onlySource returns (bool ok);
+contract IInformation is Source {
+    
+    event FieldStringChanged(string message, string value, address sourceAddress);
 
-	modifier onlySource() {
-		require(msg.sender == sourceAddress);
-		_;
-	}
+    event FieldUintChanged(string message, uint value, address sourceAddress);
 }

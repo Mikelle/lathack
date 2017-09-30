@@ -1,6 +1,5 @@
 pragma solidity ^0.4.15;
 
-
 contract PayableProposal {
     bool public isPayableProposal;
 
