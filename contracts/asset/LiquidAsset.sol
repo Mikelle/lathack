@@ -11,6 +11,7 @@ contract LiquidAsset is StandardToken {
 	struct Account {
 		uint balance;
 		uint lastDividends;
+		bool isValue;
 	}
 	
     mapping(address => Account) accounts;

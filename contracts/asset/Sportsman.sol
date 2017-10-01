@@ -2,8 +2,9 @@ pragma solidity ^0.4.15;
 
 import "./IIdentity.sol";
 import "./IInformation.sol";
+import "./LiquidAsset.sol";
 
-contract Sportsman is IIdentity, IInformation {
+contract Sportsman is LiquidAsset, IInformation {
     uint salary;
     
     function setName(string _name) onlySource {

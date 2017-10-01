@@ -7,4 +7,6 @@ contract IInformation is Source {
     event FieldStringChanged(string message, string value, address sourceAddress);
 
     event FieldUintChanged(string message, uint value, address sourceAddress);
+
+    event FieldBoolChanged(string message, bool value, address sourceAddress);
 }
