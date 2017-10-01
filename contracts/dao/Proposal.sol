@@ -28,4 +28,8 @@ contract Proposal is FinalizableProposal {
     function voteVs() isNotFinished {
         votesVs = votesVs + 1;
     }
+
+    function getProposalResult() constant returns(bool) {
+        return votesFor > votesVs;
+    }
 }
