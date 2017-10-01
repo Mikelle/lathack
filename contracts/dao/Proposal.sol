@@ -3,14 +3,13 @@ pragma solidity ^0.4.15;
 import "./PayableProposal.sol";
 import "./FinalizableProposal.sol";
 
-contract Proposal is PayableProposal, FinalizableProposal {
+contract Proposal is FinalizableProposal {
     string public title;
     string public description;
     uint votesFor = 0;
     uint votesVs = 0;
 
-    function Proposal(bool _isPayable, uint _endBlock, string _title, string _description)
-    PayableProposal(_isPayable)
+    function Proposal(uint _endBlock, string _title, string _description)
     FinalizableProposal(_endBlock)
     {
         require(bytes(_title).length > 0);
