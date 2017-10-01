@@ -34,7 +34,7 @@ contract LiquidAsset is StandardToken {
     modifier updateAccount(address account) {
     	var owing = dividendsOwing(account);
     	if (owing > 0) {
-    		accounts[account].balance = accounts[account].balance.add(owing);
+    		account.transfer(owing);
     		accounts[account].lastDividends = totalDividends;
     	}
     	_;
