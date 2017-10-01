@@ -1,7 +1,7 @@
 pragma solidity ^0.4.15;
 
 import './LiquidAsset.sol';
-import './Source';
+import './Source.sol';
 
 contract Crowdsale is Source {
     
