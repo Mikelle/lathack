@@ -13,7 +13,7 @@ contract Crowdsale is Source {
 
 	address restricted;
 
-	LiquidAsset token;
+	LiquidAsset public token;
 
 	uint rate;
 
