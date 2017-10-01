@@ -1,6 +1,5 @@
 pragma solidity ^0.4.15;
 
-import "./PayableProposal.sol";
 import "./FinalizableProposal.sol";
 
 contract Proposal is FinalizableProposal {

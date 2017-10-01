@@ -4,6 +4,7 @@ import './IIdentity.sol';
 import './LiquidAsset.sol';
 
 contract IAuthority {
+
 	function isCapableForIdentity(IIdentity identity) {
 
 	}

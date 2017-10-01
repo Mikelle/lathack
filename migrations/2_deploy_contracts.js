@@ -2,7 +2,6 @@ const Sportsman = artifacts.require('./asset/Sportsman.sol');
 const LiquidAsset = artifacts.require('./asset/LiquidAsset.sol');
 const Crowdsale = artifacts.require('./asset/Crowdsale.sol');
 const Proposal = artifacts.require("./Proposal.sol");
-const PayableProposal = artifacts.require("./PayableProposal.sol");
 const FinalizableProposal = artifacts.require("./FinalizableProposal.sol");
 
 module.exports = function(deployer) {
