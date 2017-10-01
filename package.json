@@ -1,0 +1,24 @@
+{
+  "name": "lathack",
+  "version": "1.0.0",
+  "description": "Requirements:",
+  "main": "server/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "node server/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mikelle/lathack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mikelle/lathack/issues"
+  },
+  "homepage": "https://github.com/Mikelle/lathack#readme",
+  "dependencies": {
+    "request-promise": "^4.2.2",
+    "web3": "^1.0.0-beta.22"
+  }
+}
